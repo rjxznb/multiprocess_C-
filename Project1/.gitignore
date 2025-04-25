@@ -1,0 +1,4 @@
+*.vcxproj*
+Project1.sln
+.vs
+.vs*
