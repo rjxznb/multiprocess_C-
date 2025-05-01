@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\atomic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|solutionrelative:Project1\\atomic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\tasks_struct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|solutionrelative:Project1\\tasks_struct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\memory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|solutionrelative:Project1\\memory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F3E55946-706A-40A5-B6C6-6F26944E6D71}|Project1\\Project1.vcxproj|solutionrelative:Project1\\DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +26,60 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataStruct.h",
+              "DocumentMoniker": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\DataStruct.h",
+              "RelativeDocumentMoniker": "Project1\\DataStruct.h",
+              "ToolTip": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\DataStruct.h",
+              "RelativeToolTip": "Project1\\DataStruct.h",
+              "ViewState": "AQIAABIBAAAAAAAAAADwvyEBAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-28T12:35:38.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "memory.h",
+              "DocumentMoniker": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\memory.h",
+              "RelativeDocumentMoniker": "Project1\\memory.h",
+              "ToolTip": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\memory.h",
+              "RelativeToolTip": "Project1\\memory.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-28T12:06:31.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tasks_struct.h",
+              "DocumentMoniker": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\tasks_struct.h",
+              "RelativeDocumentMoniker": "Project1\\tasks_struct.h",
+              "ToolTip": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\tasks_struct.h",
+              "RelativeToolTip": "Project1\\tasks_struct.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-28T11:36:56.25Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "atomic.cpp",
               "DocumentMoniker": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\atomic.cpp",
               "RelativeDocumentMoniker": "Project1\\atomic.cpp",
-              "ToolTip": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\atomic.cpp",
-              "RelativeToolTip": "Project1\\atomic.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
+              "ToolTip": "F:\\rjx_doc\\multiprocess_C\u002B\u002B\\Project1\\Project1\\atomic.cpp*",
+              "RelativeToolTip": "Project1\\atomic.cpp*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-25T05:09:51.956Z",
               "EditorCaption": ""

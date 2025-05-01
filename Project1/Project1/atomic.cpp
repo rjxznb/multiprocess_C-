@@ -1,30 +1,36 @@
 #include<iostream>
-#include<thread>
-#include<atomic>
+#include<vector>
+#include"DataStruct.h"
 using namespace std;
 
-class SpinLock {
-private:
-	atomic_flag m;
-public:
-	SpinLock() : m{ATOMIC_FLAG_INIT} {}
-
-	void lock() {
-		while (1) {
-			if (m.test_and_set(memory_order_acquire) == 0) break;
-			std::this_thread::sleep_for(std::chrono::seconds(1));
-		}
-	}
-
-	void unlock() {
-		m.clear(memory_order_release);
-	}
-};
 
 
 int main() {
-	
+    RedBlackTree rbt;
+    rbt.insert(10);
+    rbt.insert(20);
+    rbt.insert(30);
+    rbt.insert(40);
+    rbt.insert(50);
+    rbt.insert(25);
 
+    cout << "Tree after insertion:" << endl;
+    rbt.print();
 
+    rbt.deleteNode(30);
+    cout << "Tree after deleting 30:" << endl;
+    rbt.print();
+
+    rbt.search(25);
+    rbt.search(30);
+   
+    
+    vector<int> v(6);
+    string s2 = "nihao";
+    copy(s2.begin(), s2.end(), v.begin() + 1);
+    for (auto i : v) {
+        cout << i;
+    }
+    return 0;
 
 }

@@ -18,5 +18,16 @@
     <ClCompile Include="atomic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="tasks_struct.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStruct.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="memory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

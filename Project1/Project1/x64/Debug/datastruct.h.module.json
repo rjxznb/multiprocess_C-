@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\DataStruct.h.obj",
+            "outputs": [
+                "F:\\rjx_doc\\multiprocess_C++\\Project1\\Project1\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "F:\\rjx_doc\\multiprocess_C++\\Project1\\Project1\\x64\\Debug\\DataStruct.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "DataStruct.h",
+                    "source-path": "f:\\rjx_doc\\multiprocess_c++\\project1\\project1\\datastruct.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
