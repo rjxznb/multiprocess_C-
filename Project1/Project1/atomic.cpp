@@ -23,14 +23,5 @@ int main() {
 
     rbt.search(25);
     rbt.search(30);
-   
-    
-    vector<int> v(6);
-    string s2 = "nihao";
-    copy(s2.begin(), s2.end(), v.begin() + 1);
-    for (auto i : v) {
-        cout << i;
-    }
-    return 0;
 
 }

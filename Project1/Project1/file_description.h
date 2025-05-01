@@ -8,18 +8,21 @@ struct file {
 	std::string path;
 	int fd;
 	int f_count; // 引用计数；
-
+	int f_mode;
+	int f_flag;
+	int read_pos;
+	int write_pos;
 };
 
 struct file_table {
 	file** f;
-
+	int max_fd;
+	int open_bitmap;
+	int close_bitmap;
 };
 
 
 struct files_struct {
 	file_table* ft;
 	int next_fd;
-
-
 };
