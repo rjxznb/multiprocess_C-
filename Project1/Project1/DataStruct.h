@@ -25,7 +25,7 @@ class RedBlackTree {
 private:
     Node<Key, Val>* root;
 
-    void leftRotate(Node<Key>* node) {
+    void leftRotate(Node<Key, Val>* node) {
         Node<Key>* rightChild = node->right;
         node->right = rightChild->left;
 
@@ -73,16 +73,16 @@ private:
         node->parent = leftChild;
     }
 
-    void fixInsert(Node<Key>* node) {
-        Node<Key>* parent = nullptr;
-        Node<Key>* grandparent = nullptr;
+    void fixInsert(Node<Key, Val>* node) {
+        Node<Key, Val>* parent = nullptr;
+        Node<Key, Val>* grandparent = nullptr;
 
         while (node != root && node->parent->color == RED) {
             parent = node->parent;
             grandparent = node->parent->parent;
 
             if (parent == grandparent->left) {
-                Node<Key>* uncle = grandparent->right;
+                Node<Key, Val>* uncle = grandparent->right;
 
                 if (uncle != nullptr && uncle->color == RED) {
                     parent->color = BLACK;
@@ -103,7 +103,7 @@ private:
                 }
             }
             else {
-                Node<Key>* uncle = grandparent->left;
+                Node<Key, Val>* uncle = grandparent->left;
 
                 if (uncle != nullptr && uncle->color == RED) {
                     parent->color = BLACK;
@@ -128,8 +128,8 @@ private:
         root->color = BLACK;
     }
 
-    void fixDelete(Node<Key>* node) {
-        Node<Key>* sibling;
+    void fixDelete(Node<Key, Val>* node) {
+        Node<Key, Val>* sibling;
 
         while (node != root && node->color == BLACK) {
             if (node == node->parent->left) {
@@ -205,9 +205,9 @@ private:
         node->color = BLACK;
     }
 
-    Node<Key>* findNode(Node<Key>* root, Key value) {
-        while (root != nullptr && root->data != value) {
-            if (Pr()(value, root->data)) {
+    Node<Key, Val>* findNode(Node<Key, Val>* root, Key key) {
+        while (root != nullptr && root->data != key) {
+            if (Pr()(key, root->data)) {
                 root = root->left;
             }
             else {
@@ -220,10 +220,10 @@ private:
 public:
     RedBlackTree() : root(nullptr) {}
 
-    void insert(Key value) {
-        Node<Key>* newNode = new Node<Key>(value);
-        Node<Key>* current = root;
-        Node<Key>* parent = nullptr;
+    void insert(Key key, Val val) {
+        Node<Key, Val>* newNode = new Node<Key, Val>(key, val);
+        Node<Key, Val>* current = root;
+        Node<Key, Val>* parent = nullptr;
 
         while (current != nullptr) {
             parent = current;
@@ -250,8 +250,8 @@ public:
         fixInsert(newNode);
     }
 
-    void deleteNode(Key value) {
-        Node<Key, Val>* node = findNode(root, value);
+    void deleteNode(Key key) {
+        Node<Key, Val>* node = findNode(root, key);
 
         if (node == nullptr) {
             return;
@@ -297,8 +297,8 @@ public:
         delete node;
     }
 
-    void search(int value) {
-        Node<Key>* node = findNode(root, value);
+    void search(Key key) {
+        Node<Key, Val>* node = findNode(root, key);
         if (node != nullptr) {
             cout << "Found: " << node->data << endl;
         }
@@ -307,7 +307,7 @@ public:
         }
     }
     // ÖÐÐò±éÀú
-    void printTree(Node<Key>* node) {
+    void printTree(Node<Key, Val>* node) {
         if (node != nullptr) {
             printTree(node->left);
             cout << node->data << " (" << (node->color == RED ? "RED" : "BLACK") << ")" << endl;

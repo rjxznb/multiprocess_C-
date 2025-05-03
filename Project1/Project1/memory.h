@@ -2,24 +2,34 @@
 #include"DataStruct.h"
 #include<list>
 
-enum class OPERATION {
+// 总的地址空间为64位，所以用16位的16进制来表示；
+#define STACK_START 0x7ff<<9 // 栈区空间的起始位置，也就是最高地址；
+#define PAGE_SIZE 0x1<<12 // 4k
 
-
-};
+//enum class OPERATION {
+//
+//
+//};
 
 struct pgd; // 页表；
 
 
-// 虚拟内存段；
+// 虚拟内存段；一个section；
 struct vm_area_struct {
-	unsigned long vm_start;
+	unsigned long vm_start; // 低地址
+	unsigned long vm_end; // 高地址；
 	unsigned long used;
-	OPERATION type;
+	// OPERATION type;
 
 
 };
 
-
+// 插入一个新的 vma 到 mm_struct 的rbtree和list；
+void insert_vma(struct mm_struct* mm, struct vm_area_struct* vma) {
+	mm->mmap.push_back(vma);
+	mm->rb_tree.insert(vma->vm_start, vma);
+	mm->map_count++;
+}
 
 
 // ul类型是随机器不同而不同，32位os为32位，64位为64位，
@@ -38,7 +48,6 @@ struct mm_struct {
 	int map_count; // vm_area_struct的数量；
 
 	pgd* page_table;
-
 };
 
 
