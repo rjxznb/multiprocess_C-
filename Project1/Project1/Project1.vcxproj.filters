@@ -26,7 +26,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="memory.h">
+    <ClInclude Include="elf_loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="file_description.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualMem.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

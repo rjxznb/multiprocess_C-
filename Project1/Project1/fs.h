@@ -11,7 +11,7 @@ struct inode {
 
 struct dentry {
 	std::string name;
-	std::chrono::time_point create_time;
+	// std::chrono::time_point create_time;
 	dentry* parent;
 	std::list<dentry*> children;
 

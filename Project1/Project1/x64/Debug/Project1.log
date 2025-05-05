@@ -1,3 +1,6 @@
 ﻿  正在扫描源以查找模块依赖项...
+  DataStruct.h
+  正在编译...
+  DataStruct.h
   atomic.cpp
-  Project1.vcxproj -> F:\rjx_doc\multiprocess_C++\Project1\x64\Debug\Project1.exe
+D:\visual studio 2022 c++\multiprocess_C-\Project1\Project1\atomic.cpp(10): error C4700: 使用了未初始化的局部变量“a”

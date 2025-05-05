@@ -133,7 +133,10 @@
     <ClCompile Include="tasks_struct.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="memory.h" />
+    <ClInclude Include="elf_loader.h" />
+    <ClInclude Include="file_description.h" />
+    <ClInclude Include="fs.h" />
+    <ClInclude Include="VirtualMem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

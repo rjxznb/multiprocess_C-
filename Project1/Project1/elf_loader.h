@@ -36,12 +36,19 @@ struct binary_prm* alloc_binary_prm(){
 }
 
 // 初始化binary_prm对象之后，需要查看文件头的信息，从而判断二进制文件的类型，从而调用对应的加载器
-
+void load_file_header(struct binary_prm* bprm) {
+	bprm->file_header
+}
 
 
 // elf加载器实例的函数
-void elf_load_binary(struct binary_prm*) {
-
+void elf_load_binary(struct binary_prm* ) {
+	// 1.先读文件头，读到一个buf里；
+	// 2.再读program header table
+	// 3.释放原来进程的mm_struct
+	// 4.重新设置mm_struct为binprm里的mm_struct，并加载可执行文件的load segment；
+	// 5.分配数据段和brk的虚拟地址空间；
+	// 6.加载动态库，进入libc_start_main函数；
 }
 
 void elf_load_shlib(struct file*) {
