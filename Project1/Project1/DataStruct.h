@@ -3,6 +3,20 @@
 using namespace std;
 
 
+// 双向链表；
+template<typename T>
+struct ListNode {
+    T val;
+    ListNode* prev, next;
+};
+
+// 头节点；
+template<typename T>
+struct ListHead {
+    ListNode<T>* next;
+};
+
+
 // 红黑树；
 enum Color { RED, BLACK };
 
