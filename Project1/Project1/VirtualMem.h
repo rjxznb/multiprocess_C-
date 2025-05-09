@@ -41,7 +41,6 @@ struct mm_struct {
 	unsigned long stack_start, stack_end;
 	unsigned long data_start, data_end;
 
-
 	RedBlackTree<int, vm_area_struct*> rb_tree; // vm_area_struct红黑树；key存的是vm_start，val存的是vm_area_struct；
 	list<vm_area_struct*> mmap; // vm_area_struct链表；
 	vm_area_struct* cache_vm_area; // 当前进程刚刚访问的虚拟地址段；

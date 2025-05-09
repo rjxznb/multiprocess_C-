@@ -1,5 +1,6 @@
 #pragma once
 #include<string>
+#include<vector>
 #include<atomic>
 #include "DataStruct.h"
 
@@ -143,20 +144,71 @@ enum class ZONE_TYPE{
 };
 // 每一个zone都有一个自己的伙伴系统，就是对应着free_area数组；
 struct zone {
+	pglist_data* zone_pgdata; // 当前zone所在的node的pglist_data;
+	int zone_start_pfn; // 该zone管理的起始页框号；
 	ZONE_TYPE type;
 	struct free_area free_area[MAX_FREE_AREA_SIZE];
 };
 
-#define MAX_NR_ZONES  // 
+#define MAX_NR_ZONES (int)ZONE_TYPE::MAX_ZONE_TYPE // 一个节点最多有几个zones；
+#define MAX_NUMANODES 8 // 一个服务器最多的节点个数；
+#define MAX_ZONES_PER_ZONELIST MAX_NUMANODES * MAX_NR_ZONES // 表示所有node可能的最多zone数。
+
 // 在numa架构下每一个cpu都被作为一个node来看待，这里的pglist_data就对应一个node；
 typedef struct pglist_data {
-	struct zone node_zone[(int)ZONE_TYPE::MAX_ZONE_TYPE];
+	struct zone node_zone[(int)ZONE_TYPE::MAX_ZONE_TYPE]; // 本节点管理的zone数组；
+	struct zone global_node_zone[MAX_ZONES_PER_ZONELIST];
+	int nr_zones; // 当前节点拥有的zone数量；
 	unsigned long long node_id;
+	ListHead<zone>* zonelist; // 存储当前cpu对应的所有zone的链表；
 }pg_data_t;
 
 // 初始化一个zone的伙伴系统；
 void init_zone_free_area() {
 
+}
+
+// 当前主机的cpu个数
+#define NR_CPU 1
+// 定义全局的pglist_data，存储了每一个cpu对应的pglist_data结构体
+pg_data_t pglists[NR_CPU];
+
+/*--------------------------page compact碎片整理-------------------------*/
+
+// 碎片整理的上下文参数结构体；
+struct compact_control {
+	// 在从后向前扫描zone时，存储空闲页；
+	ListHead<Page>* freepages;
+	// 在从前向后扫描zone时，存储待迁移的movable/reclaimable/页；
+	ListHead<Page>* migratepages;
+	// 空闲页数；
+	unsigned long nr_free;
+	// movable页数；
+	unsigned long nr_movable;
+	// 当前扫描的zone;
+	struct zone zone;
+	// 当前需要分配的内存大小；
+	unsigned long order;
+};
+
+// 对一个zone执行碎片整理；
+void compact_page() {
+
+
+}
+
+// 碎片整理操作；
+void __alloc_page_compact(int preferred_nid ,std::vector<int> nodemask) {
+	compact_control cc={
+		.nr_free=0,
+		.nr_movable=0,
+	}
+
+	for (zone : zonelist) {
+		// 对每个zone执行碎片整理操作；
+		compact_page()；
+	}
+	
 }
 
 
